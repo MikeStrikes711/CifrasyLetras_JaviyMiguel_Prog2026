@@ -3,5 +3,9 @@ public class App {
         System.out.println("Hello, World!");
         System.out.println("Prueba");
         System.out.println("holandjfjer");
+        for (int potito = 1; potito >= 1; potito++)
+        {
+            System.out.println("Potito rico");
+        }
     }
 }
