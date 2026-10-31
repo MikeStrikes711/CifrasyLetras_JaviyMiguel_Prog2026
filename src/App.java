@@ -1,9 +1,6 @@
 import java.util.Scanner;
-public class App {
-    public static void main(String[] args) throws Exception {
-
-    }
-
+public class App 
+{
     //|1. MODOS DE JUEGO
     //|     MODO CONCURSO
     //|     MODO RÁPIDO
@@ -15,5 +12,13 @@ public class App {
     //|     PRUEBA ORIGINAL
 
     //|
+
+    public static void main(String[] args) throws Exception 
+    {
+        System.out.println("BIENVENIDOS A CIFRAS Y LETRAS");
+        System.out.printf("MODOS DE JUEGO:\n[1] MODO CONCURSO\n[2] MODO RÁPIDO");
+    }
+
+
 
 }
