@@ -28,6 +28,15 @@ public class Logica {
     }
 
     public int calculadora(int num1, int num2){
-        
+        Random random = new Random();
+        int NumeroInicial = random.nextInt(100) + 1;
+        int NumeroAuxiliar = random.nextInt(100) + 1;
+        num1 = NumeroInicial;
+        num2 = NumeroAuxiliar;
+        int opcion = random.nextInt(4) + 1;
+        switch(opcion){
+            
+        }
+
     }
 }
