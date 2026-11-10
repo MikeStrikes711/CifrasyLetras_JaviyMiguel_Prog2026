@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class App 
 {
     //|1. MODOS DE JUEGO
@@ -19,8 +18,14 @@ public class App
     public static void main(String[] args) throws Exception 
     {
        Pruebas.laCifraExacta();
+       System.out.printf("\nMARCADORES: " +
+                        "\n[JUGADOR 1]: " + puntosP1 +
+                        "\n[JUGADOR 2]: " + puntosP2 +
+                        "\n");
+       Pruebas.laPalabraMasLarga();
+              System.out.printf("\nMARCADORES: " +
+                        "\n[JUGADOR 1]: " + puntosP1 +
+                        "\n[JUGADOR 2]: " + puntosP2 +
+                        "\n");
     }
-
-
-
 }

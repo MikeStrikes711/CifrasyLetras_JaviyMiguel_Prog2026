@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-import javax.lang.model.util.ElementScanner14;
-
+import java.util.Arrays;
 import java.util.Random;
 public class Pruebas 
 {
@@ -10,12 +9,17 @@ public class Pruebas
     static Random random = new Random();
     // Variable operacionMatematica (para implementar operaciones matematicas desde "Logica.java")
     static Logica operacionMatematica = new Logica();
-    // Variable de entrada de teclado (SCANNER)
-    static Scanner sc = new Scanner(System.in);
+    // Variable de "La palabra más larga", contiene todas las vocales y consonantes.
+    // NOTA: Las consonantes son las más utilizadas en el Español, mezcladas con algunas
+    // más "extrañas".
+    static String[] consonantes = {"S","R","D","N","L","C","T","K","M","F","P"};
+    static String[] vocales = {"A","E","I","O","U"};
 
     //----------------------------------------------------------------------------//
     public static void laCifraExacta()
     {
+        System.out.println("-------------( LA CIFRA EXACTA )-------------");
+        Scanner sc = new Scanner(System.in);
         int numeroObjetivo = random.nextInt(400) + 100;
         int numeroAleatorio1 = random.nextInt(10) + 1;
         int numeroAleatorio2 = random.nextInt(10) + 1;
@@ -238,5 +242,155 @@ public class Pruebas
             App.puntosP2+= 1;
         }
     }
-    // 2. LA PALABRA MÁS LARGA
+
+    //----------------------------------------------------------------------------//
+    public static void laPalabraMasLarga()
+    {
+        System.out.println("-----------( LA PALABRA MÁS LARGA )-----------");
+        Scanner sc = new Scanner(System.in);
+        int palabraCorrectaP1 = 0;
+        int palabraCorrectaP2 = 0;
+        char[] letrasPermitidas = new char[8];
+        // TURNO DEL JUGADOR 1
+        // 1. GENERA LAS LETRAS AL AZAR DEL P1
+        for (int i = 0; i < 4; i++)
+        {
+            letrasPermitidas[i] = vocales[random.nextInt(vocales.length)].charAt(0);
+        }
+        for (int i = 4; i < 8; i++)
+        {
+            letrasPermitidas[i] = consonantes[random.nextInt(consonantes.length)].charAt(0);
+        }
+
+
+        System.out.println("Letras permitidas: " + Arrays.toString(letrasPermitidas));
+        System.out.println("Introduce ahora tu palabra: ");
+        String palabraP1 = sc.nextLine().toUpperCase();
+
+        // 1.2 ANALIZA "palabraP1" PARA ENCONTRAR LAS LETRAS GENERADAS
+        // Y CONTAR EL NÚMERO DE VECES QUE SE REPITEN.
+        
+        // La variable letraUsada hace referencia a las letras generadas al azar.
+        // Establece cada letra de la frase como "verdadero" o "falso", significando
+        // "repetida" o "no repetida".
+        boolean[] letraUsadaP1 = new boolean[letrasPermitidas.length];
+        
+        // "puedeUsarse" es la que se encarga de "validar" una palabra.
+        boolean puedeUsarseP1 = true;
+        
+        // El bucle se detiene si 'puedeUsarse' es falso
+        for (int i = 0; i < palabraP1.length() && puedeUsarseP1; i++) 
+        {
+            char letraActualP1 = palabraP1.charAt(i);
+            boolean encontradaP1 = false;
+            
+            // El bucle se detiene en cuanto encuentra la letra (negando para que busque mientras no sea true)
+            for (int j = 0; j < letrasPermitidas.length && !(encontradaP1 == true); j++)
+            {
+                if (!(letraUsadaP1[j] == true) && letrasPermitidas[j] == letraActualP1)
+                {
+                    letraUsadaP1[j] = true;
+                    encontradaP1 = true;
+                }
+            }
+        
+            // Si termina de buscar y no la encontró
+            if (encontradaP1 == false)
+            {
+                puedeUsarseP1 = false;
+            }
+        }
+    
+        // 1.3 COMPROBACIÓN DE LA PALABRA (si es válida o no)
+        if (puedeUsarseP1 == true) 
+        {
+            palabraCorrectaP1 = palabraP1.length();
+            System.out.println("¡Correcto! La palabra \"" + palabraP1 + "\" SÍ se puede formar con las letras disponibles.");
+        } 
+        else 
+        {
+            System.out.println("Incorrecto. La palabra \"" + palabraP1 + "\" NO se puede formar (faltan letras o se repiten más de lo permitido).");
+        }
+
+        //#########################################################################//
+        // TURNO DEL JUGADOR 2
+        // 2.1 GENERA LAS LETRAS AL AZAR DEL P2
+        // TURNO DEL JUGADOR 1
+        // 1. GENERA LAS LETRAS AL AZAR DEL P1
+        for (int i = 0; i < 4; i++)
+        {
+            letrasPermitidas[i] = vocales[random.nextInt(vocales.length)].charAt(0);
+        }
+        for (int i = 4; i < 8; i++)
+        {
+            letrasPermitidas[i] = consonantes[random.nextInt(consonantes.length)].charAt(0);
+        }
+
+        System.out.println("Letras permitidas: " + Arrays.toString(letrasPermitidas));
+        System.out.println("Introduce ahora tu palabra: ");
+        String palabraP2 = sc.nextLine().toUpperCase();
+
+        // 2.2 ANALIZA "palabraP2" PARA ENCONTRAR LAS LETRAS GENERADAS
+        // Y CONTAR EL NÚMERO DE VECES QUE SE REPITEN.
+
+        // La variable letraUsada hace referencia a las letras generadas al azar.
+        // Establece cada letra de la frase como "verdadero" o "falso", significando
+        // "repetida" o "no repetida".
+        boolean[] letraUsadaP2 = new boolean[letrasPermitidas.length];
+
+        // "puedeUsarse" es la que se encarga de "validar" una palabra.
+        boolean puedeUsarseP2 = true;
+
+        // El bucle se detiene si 'puedeUsarse' es falso
+        for (int i = 0; i < palabraP2.length() && puedeUsarseP2; i++) 
+        {
+            char letraActualP2 = palabraP2.charAt(i);
+            boolean encontradaP2 = false;
+
+            // El bucle se detiene en cuanto encuentra la letra (negando para que busque mientras no sea true)
+            for (int j = 0; j < letrasPermitidas.length && !(encontradaP2 == true); j++)
+            {
+                if (!(letraUsadaP2[j] == true) && letrasPermitidas[j] == letraActualP2)
+                {
+                    letraUsadaP2[j] = true;
+                    encontradaP2 = true;
+                }
+            }
+        
+            // Si termina de buscar y no la encontró
+            if (encontradaP2 == false)
+            {
+                puedeUsarseP2 = false;
+            }
+        }
+
+        // 2.3 COMPROBACIÓN DE LA PALABRA (si es válida o no)
+        if (puedeUsarseP2 == true) 
+        {
+            palabraCorrectaP2 = palabraP2.length();
+            System.out.println("¡Correcto! La palabra \"" + palabraP2 + "\" SÍ se puede formar con las letras disponibles.");
+        } 
+        else 
+        {
+            System.out.println("Incorrecto. La palabra \"" + palabraP2 + "\" NO se puede formar (faltan letras o se repiten más de lo permitido).");
+        }
+
+        // 3. RESULTADOS FINALES
+        if (palabraCorrectaP1 > palabraCorrectaP2)
+        {
+            System.out.println("¡¡¡ EL GANADOR ES EL JUGADOR 1 !!!");
+            App.puntosP1+= 1;
+        }
+        else if (palabraCorrectaP1 < palabraCorrectaP2)
+        {
+            System.out.println("¡¡¡ EL GANADOR ES EL JUGADOR 2 !!!");
+            App.puntosP2+= 1;
+        }
+        else if (palabraCorrectaP1 == palabraCorrectaP2)
+        {
+            System.out.println(" ¡¡¡ EMPATE !!!");
+            App.puntosP1+= 1;
+            App.puntosP2+= 1;
+        }
+    }
 }
