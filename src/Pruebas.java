@@ -393,4 +393,9 @@ public class Pruebas
             App.puntosP2+= 1;
         }
     }
+
+    public static void laCalculadoraHumana()
+    {
+        
+    }
 }
