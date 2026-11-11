@@ -27,5 +27,10 @@ public class App
                         "\n[JUGADOR 1]: " + puntosP1 +
                         "\n[JUGADOR 2]: " + puntosP2 +
                         "\n");
+        Pruebas.laCalculadoraHumana();
+              System.out.printf("\nMARCADORES: " +
+                        "\n[JUGADOR 1]: " + puntosP1 +
+                        "\n[JUGADOR 2]: " + puntosP2 +
+                        "\n");
     }
 }

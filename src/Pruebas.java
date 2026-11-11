@@ -394,8 +394,98 @@ public class Pruebas
         }
     }
 
+    //----------------------------------------------------------------------------//
     public static void laCalculadoraHumana()
     {
+        System.out.println("-----------( LA CALCULADORA HUMANA )-----------");
+        Scanner sc = new Scanner(System.in);
+        System.out.printf("\nLa calculadora humana consiste en realizar operaciones matemáticas de forma consecutiva");
+        System.out.printf("\n donde el resultado de la operación anterior se utiliza como el primer número de la siguiente operación.");
+        System.out.printf("\nEl juego consiste en realizar un número determinado de rondas, donde cada ronda se genera una operación matemática aleatoria");
+        System.out.printf("\n y el jugador debe ingresar la respuesta correcta para continuar con la siguiente");
+        System.out.printf("\nSi el jugador se equivoca, se le penaliza con 20 segundos y se le muestra la respuesta correcta");
+        System.out.printf("\nAl final del juego, se muestra el tiempo total que tardó en completar todas las rondas y el número de fallos cometidos");
+        System.out.printf("\nIntroduce el número de rondas que deseas jugar: ");
+        int rondas = sc.nextInt();
+
+        //#########################################################################//
+
+        // TURNO DEL JUGADOR 1
+        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 1 )#####");
+        int num1 = random.nextInt(100) + 1;
+        int fallos = 0;
+        int penalizacion;
+        long inicio = System.currentTimeMillis();
+        for(int i = 0; i< rondas; i++){
+            int operacion = random.nextInt(4) + 1;
+            int resultado = operacionMatematica.calculadora(num1,operacion);
+            int respuesta= sc.nextInt();
+          
+            if(respuesta == resultado){
+            System.out.println("¡Respuesta correcta!");
+            } else {
+            System.out.println("Respuesta incorrecta. La respuesta correcta es: " + resultado);
+            fallos++;
+            }
+            num1 = resultado;
+        }
         
+        long fin = System.currentTimeMillis();
+        long tiempo = (fin - inicio) / 1000;
+        penalizacion = fallos * 20;
+        long tiempoTotalP1 = tiempo + penalizacion;
+        System.out.println("El número de fallos fue de " + fallos);
+        System.out.println("El tiempo fue de " + tiempo + " s " + " y la penalización es de " + penalizacion + " s");
+        System.out.println("El tiempo total con la penalización " + tiempoTotalP1);
+
+        //#########################################################################//
+
+        // TURNO DEL JUGADOR 2
+        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 2 )#####");
+        num1 = random.nextInt(100) + 1;
+        fallos = 0;
+        penalizacion = 0;
+        inicio = 0;
+        fin = 0;
+        inicio = System.currentTimeMillis();
+        for(int i = 0; i< rondas; i++){
+            int operacion = random.nextInt(4) + 1;
+            int resultado = operacionMatematica.calculadora(num1,operacion);
+            int respuesta= sc.nextInt();
+            if(respuesta == resultado){
+            System.out.println("¡Respuesta correcta!");
+            } else {
+            System.out.println("Respuesta incorrecta. La respuesta correcta es: " + resultado);
+            fallos++;
+            }
+            num1 = resultado;
+        }
+        
+        fin = System.currentTimeMillis();
+        tiempo = (fin - inicio) / 1000;
+        penalizacion = fallos * 20;
+        long tiempoTotalP2 = tiempo + penalizacion;
+        System.out.println("El número de fallos fue de " + fallos);
+        System.out.println("El tiempo fue de " + tiempo + " s " + " y la penalización es de " + penalizacion + " s");
+        System.out.println("El tiempo total con la penalización " + tiempoTotalP2 + " s");
+
+        // 3. RESULTADOS FINALES
+        if (tiempoTotalP2 > tiempoTotalP1)
+        {
+            System.out.println("¡¡¡ EL GANADOR ES EL JUGADOR 1 !!!");
+            App.puntosP1+= 1;
+        }
+        else if (tiempoTotalP2 < tiempoTotalP1)
+        {
+            System.out.println("¡¡¡ EL GANADOR ES EL JUGADOR 2 !!!");
+            App.puntosP2+= 1;
+        }
+        else 
+        {
+            System.out.println(" ¡¡¡ EMPATE !!!");
+            App.puntosP1+= 1;
+            App.puntosP2+= 1;
+        }
+
     }
 }
