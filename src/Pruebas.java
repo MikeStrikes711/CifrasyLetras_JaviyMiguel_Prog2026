@@ -486,6 +486,6 @@ public class Pruebas
             App.puntosP1+= 1;
             App.puntosP2+= 1;
         }
-
+        
     }
 }
