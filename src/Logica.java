@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Logica {
-
+    
     // PROCESO DE SUMA
     public int sumar(int num1, int num2) {
         int suma = num1 + num2;
