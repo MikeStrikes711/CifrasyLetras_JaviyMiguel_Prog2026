@@ -488,4 +488,7 @@ public class Pruebas
         }
         
     }
+
+    //----------------------------------------------------------------------------//
+    public static void laPalabraOculta(){}
 }
