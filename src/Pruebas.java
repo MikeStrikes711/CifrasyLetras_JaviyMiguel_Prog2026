@@ -253,6 +253,7 @@ public class Pruebas
         char[] letrasPermitidas = new char[8];
         // TURNO DEL JUGADOR 1
         // 1. GENERA LAS LETRAS AL AZAR DEL P1
+        System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 1 ]#####\n");
         for (int i = 0; i < 4; i++)
         {
             letrasPermitidas[i] = vocales[random.nextInt(vocales.length)].charAt(0);
@@ -317,6 +318,7 @@ public class Pruebas
         // 2.1 GENERA LAS LETRAS AL AZAR DEL P2
         // TURNO DEL JUGADOR 1
         // 1. GENERA LAS LETRAS AL AZAR DEL P1
+        System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 2 ]#####\n");
         for (int i = 0; i < 4; i++)
         {
             letrasPermitidas[i] = vocales[random.nextInt(vocales.length)].charAt(0);
@@ -415,7 +417,7 @@ public class Pruebas
         //#########################################################################//
 
         // TURNO DEL JUGADOR 1
-        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 1 )#####");
+        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 1 )#####\n");
         int num1 = random.nextInt(100) + 1;
         int fallos = 0;
         int penalizacion;
@@ -445,7 +447,7 @@ public class Pruebas
         //#########################################################################//
 
         // TURNO DEL JUGADOR 2
-        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 2 )#####");
+        System.out.printf("\n #####( TURNO DEL JUGADOR NUMERO 2 )#####\n");
         num1 = random.nextInt(100) + 1;
         fallos = 0;
         penalizacion = 0;
@@ -494,5 +496,157 @@ public class Pruebas
     }
 
     //----------------------------------------------------------------------------//
-    public static void laPalabraOculta(){}
+    public static void adivinarNumero() {
+        Scanner sc = new Scanner(System.in);
+        
+        int min = 1;
+        int max = 50;
+        int maxIntentos = 5;
+        int intentosP1 = 0;
+        int intentosP2 = 0;
+        boolean acertadoP1 = false;
+        boolean acertadoP2 = false;
+        
+        // Generar número secreto aleatorio
+        int numeroSecretoP1 = random.nextInt((max - min) + 1) + min;
+        int numeroSecretoP2 = random.nextInt((max - min) + 1) + min;
+        
+        System.out.println("-------------( EL NÚMERO OCULTO )-------------");
+        System.out.println("Se ha generado un número entre " + min + " y " + max + ".");
+        System.out.println("Tienes " + maxIntentos + " intentos para adivinarlo.\n");
+
+
+        // TURNO JUGADOR 1
+        int intentoActualP1 = 1;
+        System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 1 ]#####\n");
+        while (intentoActualP1 <= maxIntentos && acertadoP1 == false) 
+        {
+            int numero = -1;
+            boolean valido = false;
+
+            // Validación de entrada por consola
+            while (!valido)
+            {
+                System.out.println("Intento " + intentoActualP1 + "/" + maxIntentos + " ");
+                System.out.println("Introduce un número (" + min + "-" + max + "): ");
+                if (sc.hasNextInt()) // COMPROBAR SI SE HA INTRODUCIDO UN NÚMERO
+                {
+                    numero = sc.nextInt();
+                    sc.nextLine(); // Limpiar buffer
+                    if (numero >= min && numero <= max)
+                    {
+                        valido = true;
+                    }
+                    else
+                    {
+                        System.out.println("Error: El número debe estar entre " + min + " y " + max + ".");
+                    }
+                }
+                else
+                {
+                    System.out.println("Error: Debes introducir un número entero válido.");
+                    sc.nextLine(); // Limpiar entrada incorrecta
+                }
+            }
+
+            // Evaluación del intento
+            if (numero == numeroSecretoP1)
+            {
+                System.out.println("¡EXACTO! Has adivinado el número (" + numeroSecretoP1 + "). ¡Has ganado!");
+                acertadoP1 = true;
+                intentoActualP1 = intentosP1;
+            } 
+            else if (numero < numeroSecretoP1)
+            {
+                System.out.println("PISTA: El número secreto es MAYOR.\n");
+            }
+            else
+            {
+                System.out.println("PISTA: El número secreto es MENOR.\n");
+            }
+            intentoActualP1++;
+        }
+
+        //#########################################################################//
+        // TURNO JUGADOR 2
+        int intentoActualP2 = 1;
+        System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 2 ]#####\n");
+        while (intentoActualP2 <= maxIntentos && acertadoP2 == false) 
+        {
+            int numero = -1;
+            boolean valido = false;
+
+            // Validación de entrada por consola
+            while (!valido)
+            {
+                System.out.println("Intento " + intentoActualP1 + "/" + maxIntentos + " ");
+                System.out.println("Introduce un número (" + min + "-" + max + "): ");
+                if (sc.hasNextInt()) // COMPROBAR SI SE HA INTRODUCIDO UN NÚMERO
+                {
+                    numero = sc.nextInt();
+                    sc.nextLine(); // Limpiar buffer
+                    if (numero >= min && numero <= max)
+                    {
+                        valido = true;
+                    }
+                    else
+                    {
+                        System.out.println("Error: El número debe estar entre " + min + " y " + max + ".");
+                    }
+                }
+                else
+                {
+                    System.out.println("Error: Debes introducir un número entero válido.");
+                    sc.nextLine(); // Limpiar entrada incorrecta
+                }
+            }
+
+            // Evaluación del intento
+            if (numero == numeroSecretoP2)
+            {
+                System.out.println("¡EXACTO! Has adivinado el número (" + numeroSecretoP2 + "). ¡Has ganado!");
+                acertadoP2 = true;
+                intentoActualP2 = intentosP2;
+            } 
+            else if (numero < numeroSecretoP2)
+            {
+                System.out.println("PISTA: El número secreto es MAYOR.\n");
+            }
+            else
+            {
+                System.out.println("PISTA: El número secreto es MENOR.\n");
+            }
+            intentoActualP2++;
+        }
+
+
+        if (!acertadoP1)
+        {
+            System.out.println("\n¡Se acabaron los intentos del JUGADOR 1! El número secreto era: " + numeroSecretoP1);
+            intentosP1 = maxIntentos;
+            App.puntosP1 += 0;
+        }
+        if (!acertadoP2)
+        {
+            System.out.println("\n¡Se acabaron los intentos del JUGADOR 2! El número secreto era: " + numeroSecretoP2);
+            intentosP2 = maxIntentos;
+            App.puntosP2 += 0;
+        }
+
+        if (intentosP1 < intentosP2)
+        {
+            App.puntosP1 += 1;
+            App.puntosP2 += 0;
+        }
+        else if (intentosP1 > intentosP2)
+        {
+            App.puntosP1 += 0;
+            App.puntosP2 += 1;
+        }
+        else if (intentosP1 == intentosP2)
+        {
+            App.puntosP1 += 0;
+            App.puntosP2 += 0;
+        }
+    }
 }

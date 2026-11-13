@@ -78,7 +78,7 @@ public class Logica {
     public static void logo()
     {  
         System.out.println(",_______________________________________________________________________________________________________________.");
-        System.out.println("|o    /#/                     /#/                                                                                   o|");
+        System.out.println("|o    /#/                     /#/                                                                              o|");
         System.out.println("|    /#/          /#/#/    /#/#/#/#/     /#/  /#/#/        /#/#/#/        /#/#/#/           /#/    /#/          |");   
         System.out.println("|   /#/        /#/_/_/#/    /#/          /#/#/         /#/    /#/      /#/#/               /#/    /#/           |");   
         System.out.println("|  /#/        /#/          /#/          /#/           /#/    /#/          /#/#/           /#/    /#/            |");   
