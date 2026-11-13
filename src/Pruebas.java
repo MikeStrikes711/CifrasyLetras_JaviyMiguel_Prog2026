@@ -399,13 +399,17 @@ public class Pruebas
     {
         System.out.println("-----------( LA CALCULADORA HUMANA )-----------");
         Scanner sc = new Scanner(System.in);
-        System.out.printf("\nLa calculadora humana consiste en realizar operaciones matemáticas de forma consecutiva");
-        System.out.printf("\ndonde el resultado de la operación anterior se utiliza como el primer número de la siguiente operación.");
-        System.out.printf("\nEl juego consiste en realizar un número determinado de rondas, donde cada ronda se genera una operación matemática aleatoria");
-        System.out.printf("\ny el jugador debe ingresar la respuesta correcta para continuar con la siguiente");
-        System.out.printf("\nSi el jugador se equivoca, se le penaliza con 20 segundos y se le muestra la respuesta correcta");
-        System.out.printf("\nAl final del juego, se muestra el tiempo total que tardó en completar todas las rondas y el número de fallos cometidos");
-        System.out.printf("\nIntroduce el número de rondas que deseas jugar: ");
+        System.out.printf("\nLa calculadora humana consiste en realizar operaciones ");
+        System.out.printf("matemáticas de forma consecutiva\nndonde el resultado de la");
+        System.out.printf("\noperación anterior se utiliza como el primer número de la ");
+        System.out.printf("siguiente operación.\nEl juego consiste en realizar un número ");
+        System.out.printf("determinado de rondas, en cada ronda se genera una operación ");
+        System.out.printf("matemática aleatoria\ny el jugador debe ingresar la respuesta ");
+        System.out.printf("correcta para continuar con la siguiente\nSi el jugador se ");
+        System.out.printf("equivoca, se le penaliza con 20 segundos y se le muestra la ");
+        System.out.printf("respuesta correcta\nAl final del juego, se muestra el tiempo ");
+        System.out.printf("total que tardó en completar todas las rondas y el número de ");
+        System.out.printf("fallos cometidos\nIntroduce el número de rondas que deseas jugar: \n");
         int rondas = sc.nextInt();
 
         //#########################################################################//

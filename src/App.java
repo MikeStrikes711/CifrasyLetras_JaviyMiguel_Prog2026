@@ -19,8 +19,10 @@ public class App {
     static int puntosP2 = 0; // PUNTOS DEL JUGADOR 2
 
     public static void main(String[] args) throws Exception {
+        Logica.logo();
         Scanner sc = new Scanner(System.in);
-        System.out.println("[1]Modo Concurso o [2]Modo Rápido");
+        System.out.printf("\nBienvenido a LETRAS Y CIFRAS\nSelecciona que modo deseas jugar:\n");
+        System.out.printf("[1] Modo Concurso\n[2] Modo Rápido\n");
         int modo = sc.nextInt();
             switch (modo) {
                 case 1:

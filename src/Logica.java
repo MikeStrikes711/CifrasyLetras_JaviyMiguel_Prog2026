@@ -73,4 +73,23 @@ public class Logica {
         }
         return resultado;
     }
+
+    // LOGOTIPO
+    public static void logo()
+    {  
+        System.out.println(",___________________________________________________________________________________________________.");
+        System.out.println("|o                                                                                                 o|");
+        System.out.println("|    _/          _/_/    _/_/_/_/      _/  _/_/       _/_/_/        _/_/_/                 _/    _/ |");   
+        System.out.println("|   _/        _/_/_/_/    _/          _/_/         _/    _/      _/_/                     _/    _/  |");   
+        System.out.println("|  _/        _/          _/          _/           _/    _/          _/_/                 _/    _/   |");   
+        System.out.println("| _/_/_/_/    _/_/_/      _/_/      _/             _/_/_/      _/_/_/                     _/_/_/    |");   
+        System.out.println("|                                                                                            _/     |");   
+        System.out.println("|                                                                                       _/_/        |");                                                               
+        System.out.println("|      _/_/_/       _/         _/_/                                                                 |");   
+        System.out.println("|   _/                      _/           _/  _/_/       _/_/_/        _/_/_/                        |");   
+        System.out.println("|  _/             _/     _/_/_/_/       _/_/         _/    _/      _/_/                             |");   
+        System.out.println("| _/             _/       _/           _/           _/    _/          _/_/                          |");   
+        System.out.println("|  _/_/_/       _/       _/           _/             _/_/_/      _/_/_/                             |");
+        System.out.println("|o_________________________________________________________________________________________________o|");                                                                       
+    }
 }
