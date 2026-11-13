@@ -1,23 +1,42 @@
-## Getting Started
+# CIFRAS Y LETRAS
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+> Este proyecto ha sido realizado por Javier de la Cruz Montaña y Miguel Ángel Nevado Rey
 
-## Folder Structure
+## Estructura de carpetas
 
-The workspace contains two folders by default, where:
+El trabajo ha sido realizado en diferentes archivos, los cuales son:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `App.java`
+- `Interfaz.java`
+- `Logica.java`
+- `Pruebas.java`
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+El output del compilado se generó en la carpeta `bin` por defecto.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Estructura del código
 
-## Dependency Management
+Hemos organizado el proyecto en un total de 4 archivos, de los cuales cada uno tiene su propia función.
+En `App.java` está lo que se ejecuta. Desde el `main`, se llaman a todas las funciones de los diferentes archivos para así poder ejecutarlo de forma más organizada y limpia.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Dentro de `Interfaz.java` se localiza toda la interfaz de los menús y los selectores de pruebas.
 
+En el archivo `Logica.java` está escrita toda la lógica (mayormente las operaciones matemáticas).
 
-## PLANIFICACION
+Y en el archivo `Pruebas.java` es donde se localiza el código de todas y cada una de las pruebas.
 
-Hay que hacer un proyecto similar al Cifras y Letras
+## Expresiones y detalles importantes del código
+
+A lo largo de toda la programación se hacen referencia a términos internos los cuales no se entenderían de forma clara a simple vista.
+Dos de ellos (el más usado en todas las pruebas) son:
+
+>P1: Hace referencia a todo lo relacionado con el jugador 1.
+>P2: Hace referencia a todo lo relacionado con el jugador 2.
+
+Algunos términos también son:
+
+> sc: Hace referencia a la entrada de teclado con `SC`anner.
+
+Algunas veces se hace uso de expreiones tales como P12, P23, P21, etc...
+Todo eso hace uso de una nomenclatura que es la siguiente:
+
+> P = PLAYER \ 1-2 = Numero del jugador \ 1-99 = Numero de la variable.

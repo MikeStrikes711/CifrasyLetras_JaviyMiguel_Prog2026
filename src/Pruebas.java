@@ -497,8 +497,9 @@ public class Pruebas
 
     //----------------------------------------------------------------------------//
     public static void adivinarNumero() {
+
+        System.out.println("-------------( EL NÚMERO OCULTO )-------------");
         Scanner sc = new Scanner(System.in);
-        
         int min = 1;
         int max = 50;
         int maxIntentos = 5;
@@ -506,17 +507,13 @@ public class Pruebas
         int intentosP2 = 0;
         boolean acertadoP1 = false;
         boolean acertadoP2 = false;
-        
         // Generar número secreto aleatorio
         int numeroSecretoP1 = random.nextInt((max - min) + 1) + min;
         int numeroSecretoP2 = random.nextInt((max - min) + 1) + min;
         
-        System.out.println("-------------( EL NÚMERO OCULTO )-------------");
+        // TURNO JUGADOR 1
         System.out.println("Se ha generado un número entre " + min + " y " + max + ".");
         System.out.println("Tienes " + maxIntentos + " intentos para adivinarlo.\n");
-
-
-        // TURNO JUGADOR 1
         int intentoActualP1 = 1;
         System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 1 ]#####\n");
         while (intentoActualP1 <= maxIntentos && acertadoP1 == false) 
@@ -569,6 +566,8 @@ public class Pruebas
 
         //#########################################################################//
         // TURNO JUGADOR 2
+        System.out.println("Se ha generado un número entre " + min + " y " + max + ".");
+        System.out.println("Tienes " + maxIntentos + " intentos para adivinarlo.\n");
         int intentoActualP2 = 1;
         System.out.printf("\n #####[ TURNO DEL JUGADOR NUMERO 2 ]#####\n");
         while (intentoActualP2 <= maxIntentos && acertadoP2 == false) 

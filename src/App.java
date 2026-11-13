@@ -7,7 +7,7 @@ public class App {
     static int puntosP2 = 0; // PUNTOS DEL JUGADOR 2
 
     public static void main(String[] args) throws Exception {
-        Logica.logo();
+        Interfaz.logo();
         Interfaz.inicio();
     }
 }
