@@ -1,21 +1,31 @@
-import java.util.Scanner;
+/*
+* @author Miguel.A Nevado y Javier de la Cruz
+* @version 1.0
+*/
 
+import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 public class Pruebas 
 {
-    // INICIALIZACION DE VARIABLES ESTÁTICAS
-    // Variable Random (para numeros aleatorios)
+    /**
+     * INICIALIZACION DE VARIABLES ESTÁTICAS
+     * @.param Random (para numeros aleatorios)
+     * @.param operacionMatematica (para implementar operaciones matematicas desde "Logica.java")
+     * @.param consonantes Es de "La palabra más larga", contiene todas las consonantes.
+     * @.param vocales Es de "La palabra más larga", contiene todas las consonantes.
+     * NOTA: Las consonantes son las más utilizadas en el Español, mezcladas con algunas
+     * más "extrañas".
+     */
     static Random random = new Random();
-    // Variable operacionMatematica (para implementar operaciones matematicas desde "Logica.java")
     static Logica operacionMatematica = new Logica();
-    // Variable de "La palabra más larga", contiene todas las vocales y consonantes.
-    // NOTA: Las consonantes son las más utilizadas en el Español, mezcladas con algunas
-    // más "extrañas".
     static String[] consonantes = {"S","R","D","N","L","C","T","K","M","F","P"};
     static String[] vocales = {"A","E","I","O","U"};
 
     //----------------------------------------------------------------------------//
+    /*
+    * @.param 
+    */
     public static void laCifraExacta()
     {
         System.out.println("-------------( LA CIFRA EXACTA )-------------");
